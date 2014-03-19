@@ -16,14 +16,13 @@ module Staccato
   # @param id [String, nil] the id provided by google, i.e., `UA-XXXXXX-Y`
   # @param client_id [String, Integer, nil] a unique id to track the session of
   #   an individual user
-  # @param hostname [String, Integer, nil] target website's hostname, needed
-  #   when using the same GA tracker id for more than one website
+  # @param optional_params [Hash, Integer, nil] params added to every hit request
   # @return [Staccato::Tracker] a new tracker is returned
-  def self.tracker(id, client_id = nil, hostname = nil)
+  def self.tracker(id, client_id = nil, optional_params = {})
     if id.nil?
       Staccato::NoopTracker.new
     else
-      Staccato::Tracker.new(id, client_id, hostname)
+      Staccato::Tracker.new(id, client_id, optional_params)
     end
   end
 

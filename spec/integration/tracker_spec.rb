@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Staccato::Tracker do
   let(:uri) {Staccato.tracking_uri}
   let(:tracker) {Staccato.tracker('UA-XXXX-Y')}
-  let(:tracker_with_hostname) {Staccato.tracker('UA-XXXX-Y', 555, 'mysite.com')}
+  let(:tracker_with_hostname) {Staccato.tracker('UA-XXXX-Y', 555, {'dh' => 'mysite.com'})}
   let(:response) {stub(:body => '', :status => 201)}
 
   before(:each) do

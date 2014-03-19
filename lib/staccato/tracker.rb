@@ -4,16 +4,16 @@ module Staccato
   # 
   # @author Tony Pitale
   class Tracker
-    attr_reader :id, :hostname
+    attr_reader :id, :additional_params
 
     # sets up a new tracker
     # @param id [String] the GA tracker id
     # @param client_id [String, nil] unique value to track user sessions
-    # @param hostname [String, nil] target website's hostname
-    def initialize(id, client_id = nil, hostname = nil)
+    # @param optional_params [Hash, nil] params added to every hit request
+    def initialize(id, client_id = nil, optional_params = {})
       @id = id
       @client_id = client_id
-      @hostname = hostname
+      @additional_params = optional_params
     end
 
     # The unique client id

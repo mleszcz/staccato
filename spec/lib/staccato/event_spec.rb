@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Staccato::Event do
 
   let(:tracker) {Staccato.tracker('UA-XXXX-Y', '555')}
-  let(:tracker_with_hostname) {Staccato.tracker('UA-XXXX-Y', '555', 'mysite.com')}
+  let(:tracker_with_hostname) {Staccato.tracker('UA-XXXX-Y', '555', {'dh' => 'mysite.com'})}
 
   context "with all options" do
     let(:event) do
