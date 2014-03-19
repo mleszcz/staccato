@@ -4,7 +4,7 @@ module Staccato
   # 
   # @author Tony Pitale
   class Tracker
-    attr_reader :id, :additional_params
+    attr_reader :id, :optional_params
 
     # sets up a new tracker
     # @param id [String] the GA tracker id
@@ -13,7 +13,7 @@ module Staccato
     def initialize(id, client_id = nil, optional_params = {})
       @id = id
       @client_id = client_id
-      @additional_params = optional_params
+      @optional_params = optional_params
     end
 
     # The unique client id
